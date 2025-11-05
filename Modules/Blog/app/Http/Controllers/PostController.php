@@ -5,7 +5,7 @@ namespace Modules\Blog\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class BlogController extends Controller
+class PostController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,8 +13,10 @@ class BlogController extends Controller
     public function index()
     {
        // return view('blog::index');
+
         $posts = \Modules\Blog\Models\Post::with('author')->get();
         return view('blog::index', compact('posts'));
+
     }
 
     /**

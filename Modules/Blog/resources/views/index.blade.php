@@ -1,5 +1,4 @@
-<x-blog::layouts.master>
-    <h1>Hello World</h1>
-
-    <p>Module: {!! config('blog.name') !!}</p>
-</x-blog::layouts.master>
+<h1>Blog Posts</h1>
+@foreach($posts as $post)
+    <p><strong>{{ $post->title }}</strong> by {{ $post->author->name }}</p>
+@endforeach
